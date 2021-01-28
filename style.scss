@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+.navbar {
+  width: 100%;
+}
+.header {
+  width: 85%;
+  z-index: 10000;
+  margin-left: auto;
+  margin-right: auto;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    padding-right: 2vw;
+    list-style: none;
+    overflow: hidden;
+    li {
+      margin-top: 1.7vw;
+
+      a {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        font-size: 1.3vw;
+        font-weight: 900;
+        margin-left: 3vw;
+        letter-spacing: 1.8px;
+        color: white;
+      }
+    }
+  }
+  .logo {
+    display: block;
+    float: left;
+    font-size: 2vw;
+    padding: 1vw 1vw;
+    text-decoration: none;
+  }
+
+  .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+  .menu-icon .navicon {
+    background: white;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background 0.2s ease-out;
+    width: 18px;
+  }
+  .menu-icon .navicon:before,
+  .menu-icon .navicon:after {
+    background: white;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+  }
+  .menu-icon .navicon:before {
+    top: 5px;
+  }
+  .menu-icon .navicon:after {
+    top: -5px;
+  }
+
+  /* menu btn css */
+  .menu-btn {
+    display: none;
+  }
+  .menu-btn:checked ~ .menu {
+    max-height: 400px;
+  }
+  .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+}
+
+.homecontent,
+.whocontent,
+.whatcontent,
+.contactcontent {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.home {
+  color: white;
+  background-color: black;
+  .homecontent {
+    .texthome {
+      position: absolute;
+      top: 50%;
+      left: 49%;
+      transform: translate(-50%, -50%);
+
+      .lets {
+        font-size: 3.7vw;
+        font-weight: 600;
+      }
+      .intro {
+        font-size: 2.59vw;
+        font-weight: 300;
+      }
+    }
+    .footer_home {
+      text-align: center;
+      .footerhometext {
+        bottom: 0%;
+      }
+    }
+  }
+}
+
+section.who {
+  .whocontent {
+    text-align: center;
+    .whohead {
+      font-size: 5.5vw;
+      font-weight: 900;
+      opacity: 0.4;
+    }
+    .whotext {
+      font-size: 2vw;
+      font-weight: 300;
+      text-align: justify;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+section.what {
+  text-align: center;
+  .whathead {
+    font-size: 5.5vw;
+    font-weight: 900;
+    opacity: 0.4;
+  }
+  .whatcontent {
+    ul {
+      list-style: none;
+    }
+    text-align: center;
+    display: grid;
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "design creation"
+      "advertise digitalm";
+    .design {
+      border-right: 1px solid rgba(0, 0,0, 0.5);
+      border-bottom: 1px solid rgba(0, 0,0, 0.5);
+      grid-area: design;
+      .designhead {
+        font-size: 2.5vw;
+        font-weight: 700;
+        opacity: 0.8;
+      }
+    }
+    .creation {
+      border-bottom: 1px solid rgba(0, 0,0, 0.5);
+      grid-area: creation;
+      .creationhead {
+        font-size: 2.5vw;
+        font-weight: 700;
+        opacity: 0.8;
+      }
+    }
+    .advertise {
+      border-right: 1px solid rgba(0, 0,0, 0.5);
+      grid-area: advertise;
+      .advertisehead {
+        font-size: 2.5vw;
+        font-weight: 700;
+        opacity: 0.8;
+      }
+    }
+    .digitalm {
+      grid-area: digitalm;
+      .digitalmhead {
+        font-size: 2.5vw;
+        font-weight: 700;
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+section.contact {
+  .contactcontent {
+    text-align: center;
+    .contacthead {
+      font-size: 5.5vw;
+      font-weight: 900;
+      opacity: 0.4;
+    }
+    .form {
+      border: 1px solid black;
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .buttons {
+      justify-content: center;
+      display: flex;
+    }
+  }
+}
+
+@media (min-width: 1085px) {
+  .header {
+    li {
+      padding-bottom: 1vw;
+      a {
+        float: right;
+        font-weight: 500;
+        padding: 0vw 0vw;
+        display: list-item;
+      }
+    }
+    .menu1 {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .menu-icon {
+      display: none;
+    }
+    .logo {
+      margin-top: 1vw;
+      padding: 0vw 0vw;
+    }
+  }
+}
